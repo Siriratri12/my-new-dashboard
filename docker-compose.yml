@@ -1,0 +1,68 @@
+# version: "3.9"
+
+# services:
+#   vue-dev:
+#     image: vue-dev-compose:4.0.0
+#     container_name: vue-dev-container
+#     # build:
+#     #   context: .
+#     #   dockerfile: Dockerfile
+#     ports:
+#       - "3000:8080"   # host:container
+#     volumes:
+#       - .:/app                        # mount project ทั้งหมด
+#       - /app/node_modules              # แยก node_modules
+#     environment:
+#       - CHOKIDAR_USEPOLLING=true      # hot reload บน Docker Windows
+#       - WATCHPACK_POLLING=true
+#     command: npm run serve
+
+# services:
+#   vue-dev:
+#     build: .
+#     container_name: vue-dev-container
+#     ports:
+#       - "8080:8080"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - CHOKIDAR_USEPOLLING=true
+#       - WATCHPACK_POLLING=true
+#     command: npm run serve
+
+# services:
+#   vue-dev:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     image: ibc-frontend:5.0.0
+#     container_name: vue-dev-container
+#     ports:
+#       - "8080:8080"
+#     volumes:
+#       - .:/app
+#       - /app/node_modules
+#     environment:
+#       - CHOKIDAR_USEPOLLING=true
+#       - WATCHPACK_POLLING=true
+#     command: npm run serve
+
+
+
+services:
+  vue-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ibc-frontend:4.0.0
+    container_name: vue-dev-container
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    command: npm run serve
