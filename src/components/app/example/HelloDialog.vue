@@ -1,12 +1,10 @@
 <template>
   <v-dialog v-model="internalDialog" max-width="400">
     <v-card>
-      <v-card-title class="headline">
-        Welcome
-      </v-card-title>
+      <v-card-title class="headline"> Welcome </v-card-title>
 
       <v-card-text>
-        {{ message }}  
+        {{ message }}
       </v-card-text>
 
       <v-card-actions>
@@ -38,7 +36,7 @@ export default {
     },
     internalDialog(val) {
       this.$emit("input", val); // ส่งกลับไป parent
-    }
+    },
   },
 
   methods: {
